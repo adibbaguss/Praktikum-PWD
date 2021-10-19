@@ -42,22 +42,22 @@ while($user_data = mysqli_fetch_array($result))
       <table border="0">
         <tr>
           <td>Nama</td>
-          <td><input type="text" name="nama" value="<?php" echo $nama;? />></td>
+          <td><input type="text" name="nama" value="<?php echo $nama;?>"</td>
         </tr>
         <tr>
           <td>Gender</td>
-          <td><input type="text" name="jkel" value="<?php" echo $jkel;? />></td>
+          <td><input type="text" name="jkel" value="<?php echo $jkel;?>" </td>
         </tr>
         <tr>
           <td>alamat</td>
-          <td><input type="text" name="alamat" value="<?php" echo $alamat;? />></td>
+          <td><input type="text" name="alamat" value="<?php echo $alamat;?>"</td>
         </tr>
         <tr>
           <td>Tgl Lahir</td>
-          <td><input type="text" name="tgllhr" value="<?php" echo $tgllhr;? />></td>
+          <td><input type="text" name="tgllhr" value="<?php echo $tgllhr;?>"</td>
         </tr>
         <tr>
-          <td><input type="hidden" name="nim" value=<?php echo $_GET['nim'];?>></td>
+          <td><input type="hidden" name="nim" value="<?php echo $_GET['nim'];?>"</td>
           <td><input type="submit" name="update" value="Update" /></td>
         </tr>
       </table>
