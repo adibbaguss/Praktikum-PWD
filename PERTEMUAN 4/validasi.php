@@ -56,19 +56,6 @@
             $data=htmlspecialchars($data);
             return $data;
         }
-
-        if(isset($_POST["submit"])){
-            $nama = $_POST["nama"];
-            $email = $_POST["email"];
-            $website = $_POST["website"];
-            $comment = $_POST["comment"];
-            $gemder = $_POST["gender"];
-
-            if(!empty(($nama)&&($email)&&($website)&&($website)&&($gender))){ 
-                $result = mysqli_query($con, "INSERT INTO account(nama, email, website, comment, gender) VALUES ('$nama','$email','$website','$comment', '$gender')");
-                
-            }
-        }
     ?>    
 
     <h2>Posting Komentar</h2>
@@ -134,6 +121,20 @@
         
         echo $gender;
         echo "<br>";
+
+        if(isset($_POST["submit"])){
+            $cekemail=test_input($_POST["email"]);
+            if(filter_var($cekemail,FILTER_VALIDATE_EMAIL)){
+                if(!empty(($_POST["nama"])&&($_POST["email"])&&($_POST["website"])&&($_POST["comment"])&&($_POST["gender"]))){ 
+                    $nama = $_POST["nama"];
+                    $email = $_POST["email"];
+                    $website = $_POST["website"];
+                    $comment = $_POST["comment"];
+                    $gemder = $_POST["gender"];
+                    $result = mysqli_query($con, "INSERT INTO account(nama, email, website, comment, gender) VALUES ('$nama','$email','$website','$comment', '$gender')");
+                }
+            }
+        }
 
     ?>
     </body>
