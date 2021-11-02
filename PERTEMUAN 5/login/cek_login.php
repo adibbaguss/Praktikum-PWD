@@ -10,7 +10,7 @@
     session_start();
     $_SESSION['iduser'] = $r['id_user'];
     $_SESSION['passuser'] = $r['password'];
-    echo"USER BERHASIL LOGIN<br>";
+    echo"<center>USER BERHASIL LOGIN<br>";
     echo "id user =",$_SESSION['iduser'],"<br>";
     echo "password=",$_SESSION['passuser'],"<br>";
     echo "<a href=logout.php><b>LOGOUT</b></a></center>";
