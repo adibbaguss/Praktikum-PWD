@@ -1,4 +1,5 @@
 <?php
+    //Link	: https://github.com/adibbaguss/Praktikum-PWD/tree/main/PERTEMUAN%206
     session_start();  
     $random_alpha = md5(rand());
     $captcha_code = substr($random_alpha,0,6);
