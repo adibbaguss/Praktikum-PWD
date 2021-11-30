@@ -23,10 +23,10 @@
     <?php 
         if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql="select * from KHS where nim = ' ".$cari." '";
+            $sql="select * from khs where NIM  like'%".$cari."%'";
             $tampil = mysqli_query($con,$sql);
         }else{
-            $sql="select * from KHS";
+            $sql="select * from khs";
             $tampil = mysqli_query($con,$sql);
         }
         $no = 1;
