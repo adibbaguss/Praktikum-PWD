@@ -13,4 +13,5 @@
     echo "Tgl Lahir : " . $r->tgllhr . "<br />";
     echo "</p>";
     }
+    
 ?>
