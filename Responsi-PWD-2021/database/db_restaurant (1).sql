@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jan 2022 pada 07.00
+-- Waktu pembuatan: 15 Jan 2022 pada 15.47
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -80,27 +80,26 @@ INSERT INTO `detail_order` (`food_id`, `order_id`, `jumlah_pesan`, `total_harga`
 ('Food-023', 'Order-004', 1, 34900),
 ('Food-011', 'Order-006', 4, 124000),
 ('Food-003', 'Order-008', 1, 24500),
-('Food-002', 'Order-011', 1, 22000),
 ('Food-005', 'Order-012', 1, 32500),
 ('Food-003', 'Order-013', 1, 24500),
 ('Food-004', 'Order-014', 1, 21500),
 ('Food-003', 'Order-015', 7, 171500),
 ('Food-003', 'Order-016', 7, 171500),
-('Food-002', 'Order-018', 1, 22000),
 ('Food-003', 'Order-018', 1, 24500),
 ('Food-001', 'Order-019', 1, 27000),
-('Food-002', 'Order-019', 1, 22000),
 ('Food-003', 'Order-019', 1, 24500),
 ('Food-004', 'Order-020', 1, 21500),
-('Food-002', 'Order-020', 1, 22000),
 ('Food-017', 'Order-020', 1, 23000),
 ('Food-001', 'Order-021', 3, 81000),
 ('Food-009', 'Order-021', 5, 130000),
 ('Food-001', 'Order-022', 6, 168000),
-('Food-002', 'Order-023', 1, 22000),
 ('Food-001', 'Order-024', 5, 140000),
 ('Food-007', 'Order-025', 4, 70000),
-('Food-009', 'Order-025', 2, 52000);
+('Food-009', 'Order-025', 2, 52000),
+('Food-001', 'Order-026', 2, 56000),
+('Food-003', 'Order-026', 3, 73500),
+('Food-009', 'Order-027', 3, 78000),
+('Food-003', 'Order-027', 2, 49000);
 
 --
 -- Trigger `detail_order`
@@ -132,15 +131,14 @@ CREATE TABLE `food_item` (
 --
 
 INSERT INTO `food_item` (`food_id`, `nama`, `jumlah`, `harga`, `id_kategori`, `foto`) VALUES
-('Food-001', 'Egg and Cheese Muffin', 55, 28000, 'K-001', '678113267_egg and cheese muffin.png'),
-('Food-002', 'Chicken Muffin', 29, 22000, 'K-001', '1738705035_chicken muffin.png'),
-('Food-003', 'Sausage McMuffin with Egg', 22, 24500, 'K-001', '504258521_sausage mcmuffin with egg.png'),
+('Food-001', 'Egg and Cheese Muffin', 40, 28000, 'K-001', '678113267_egg and cheese muffin.png'),
+('Food-003', 'Sausage McMuffin with Egg', 17, 24500, 'K-001', '504258521_sausage mcmuffin with egg.png'),
 ('Food-004', 'Egg McMuffin', 38, 21500, 'K-001', '782160324_edd mcMudffin.png'),
 ('Food-005', 'Sausage McMuffin', 39, 32500, 'K-001', '1959981613_Sausage McMuffin.png'),
 ('Food-006', 'Sausage Warp', 50, 41500, 'K-001', '330876493_sausage wrap.png'),
 ('Food-007', 'Hotcakes 3pcs.', 41, 17500, 'K-001', '179848440_hotcakes 3pcs.png'),
 ('Food-008', 'Breakfast Warp', 10, 30000, 'K-001', '1253308084_breakfast warp.png'),
-('Food-009', 'Bubur Ayam McD', 33, 26000, 'K-001', '837789923_bubur ayam mcd.png'),
+('Food-009', 'Bubur Ayam McD', 30, 26000, 'K-001', '837789923_bubur ayam mcd.png'),
 ('Food-010', 'Nasi Uduk McD', 3, 21500, 'K-001', '2004657581_nasi uduk mcd.png'),
 ('Food-011', 'Big Breakfast', 30, 31000, 'K-001', '1465659429_big breakfast.png'),
 ('Food-012', 'Beef Alfredo Burger', 65, 45000, 'K-002', '736122012_Beef Alfredo Burger.png'),
@@ -155,7 +153,7 @@ INSERT INTO `food_item` (`food_id`, `nama`, `jumlah`, `harga`, `id_kategori`, `f
 ('Food-021', 'Chicken Burger', 40, 23000, 'K-003', '2099350926_Chicken Burger.png'),
 ('Food-022', 'Chicken Figers', 34, 12000, 'K-003', '245060184_Chicken Figers.png'),
 ('Food-023', 'Chicken Snack Wrap', 60, 34900, 'K-003', '603714420_Chicken Snack Wrao.png'),
-('Food-024', 'McChicken', 0, 25000, 'K-003', '784663127_McChicken.png'),
+('Food-024', 'McChicken', 40, 25000, 'K-003', '784663127_McChicken.png'),
 ('Food-025', 'McNuggets', 89, 17000, 'K-003', '1959361429_McNuggets.png'),
 ('Food-026', 'McSpicy Alfredo Burger', 23, 34500, 'K-003', '490429756_McSpicy Alfredo Burger.png'),
 ('Food-027', 'McSpicy', 42, 23000, 'K-003', '663651117_McSpicy.png'),
@@ -224,7 +222,9 @@ INSERT INTO `order_food` (`order_id`, `tanggal`, `id_pegawai`) VALUES
 ('Order-022', '2022-01-13', 'karyawan01'),
 ('Order-023', '2022-01-13', 'karyawan01'),
 ('Order-024', '2022-01-13', 'karyawan01'),
-('Order-025', '2022-01-13', 'karyawan01');
+('Order-025', '2022-01-13', 'karyawan01'),
+('Order-026', '2022-01-14', 'karyawan01'),
+('Order-027', '2022-01-14', 'karyawan01');
 
 --
 -- Indexes for dumped tables
@@ -277,7 +277,7 @@ ALTER TABLE `order_food`
 -- AUTO_INCREMENT untuk tabel `cache_beli`
 --
 ALTER TABLE `cache_beli`
-  MODIFY `id_cache` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_cache` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
